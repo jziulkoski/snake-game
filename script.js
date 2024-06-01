@@ -170,20 +170,32 @@ const gameLoop = () => {
 
 gameLoop()
 
-document.addEventListener("keydown", ({key}) => {
-    if (key == "ArrowRight" && direction != "left") {
-        direction = "right"
+function updateDirection(newDirection) {
+    if (newDirection == "right" && direction != "left") {
+        direction = "right";
     }
-    if (key == "ArrowLeft" && direction != "right") {
-        direction = "left"
+    if (newDirection == "left" && direction != "right") {
+        direction = "left";
     }
-    if (key == "ArrowDown" && direction != "up") {
-        direction = "down"
+    if (newDirection == "down" && direction != "up") {
+        direction = "down";
     }
-    if (key == "ArrowUp" && direction != "down") {
-        direction = "up"
+    if (newDirection == "up" && direction != "down") {
+        direction = "up";
     }
-})
+}
+
+document.addEventListener("keydown", ({ key }) => {
+    if (key == "ArrowRight") updateDirection("right");
+    if (key == "ArrowLeft") updateDirection("left");
+    if (key == "ArrowDown") updateDirection("down");
+    if (key == "ArrowUp") updateDirection("up");
+});
+
+document.getElementById("up").addEventListener("click", () => updateDirection("up"));
+document.getElementById("left").addEventListener("click", () => updateDirection("left"));
+document.getElementById("down").addEventListener("click", () => updateDirection("down"));
+document.getElementById("right").addEventListener("click", () => updateDirection("right"));
 
 buttonPlay.addEventListener("click", () => {
     score.innerText = "00"
