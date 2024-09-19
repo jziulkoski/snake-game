@@ -25,14 +25,15 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 2vw;
+    margin-top: 2vw;
 }
 
 .score-value {
     font-weight: 700;
-    font-size: 4.5rem;
+    font-size: 5vw;
     display: block;
-    margin-top: -10px;
+    margin-top: -1vw;
 }
 
 .menu-screen {
@@ -46,62 +47,80 @@ canvas {
 .game-over {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3vw;
 }
 
 .final-score {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 2vw;
 }
 
 .btn-play {
     border: none;
-    border-radius: 100px;
+    border-radius: 5%;
     background-color: #37db05;
-    padding: 20px 30px;
-    font-size: 1rem;
+    padding: 1vw 2vw;
+    font-size: 1vw;
     font-weight: 600;
     color: #191919;
-    margin-top: 40px;
+    margin-top: 3vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 1vw;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .btn-play:hover {
-    background-color: #191919;
+    background-color: #484848;
     color: #37db05;
 }
 
-/* Responsive button */
+/* RESPONSIVE VERSION */
 .arrow-mobile {
     display: none;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    margin-top: 30px;
+    gap: 20px;
 }
 
 .arrow-mobile button {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    background-color: #444;
-    color: white;
+    text-align: center;
+
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+
+    background-color: #919191;
+    color: #191919;
     border: none;
-    border-radius: 5px;
-    margin-top: 3%;
-    display: none;
+    border-radius: 10%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 820px) {
     .arrow-mobile {
         display: flex;
     }
-    .arrow-mobile button {
-        display: block;
+
+    .score {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+    
+    .score-value {
+        font-size: 50px;
+    }
+    
+    .game-over {
+        font-size: 45px;
+    }
+    
+    .final-score {
+        font-size: 40px;
+    }
+    
+    .btn-play {
+        font-size: 25px;
+        gap: 1vw;
     }
 }
